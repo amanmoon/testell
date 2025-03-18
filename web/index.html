@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Python + Web UI Example</title>
+  </head>
+  <body>
+    <h1>My Local App</h1>
+    <button onclick="callPython()">Call Python Function</button>
+    <p id="output">Output will appear here.</p>
+
+    <!-- Include the Eel library -->
+    <script type="text/javascript" src="/eel.js"></script>
+    <script>
+      // Function to call the Python function via Eel
+      function callPython() {
+        eel.my_python_function("World")(function(result) {
+          document.getElementById("output").innerText = result;
+        });
+      }
+    </script>
+  </body>
+</html>
